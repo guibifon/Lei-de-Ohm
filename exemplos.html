@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        
+        .formula {
+            font-size: 20px;
+            font-weight: bold;
+            width: 250px;
+        }
+        .fraction {
+            display: inline-block;
+            text-align: center;
+        }
+        .fraction span {
+            display: block;
+            padding: 0 5px;
+        }
+        .fraction .numerator {
+            border-bottom: 2px solid black;
+        }
+
+        .quiz-box {
+            background: #fff;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .option {
+            align-items: center;
+            background-color: #e9e9e9;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 2px solid transparent;
+            width: 25%;
+        }
+
+        .option:hover {
+            background-color: #dcdcdc;
+        }
+
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+      </style>
+</head>
+<body>
+    <header>
+        <h1>Lei de Ohm</h1>
+          <nav>
+             <ul> 
+                <li> <a href="index.html">Início</a></li>
+                <li> <a href="formula.html">Fórmula</a></li>
+                <li> <a href="exemplos.html">Exemplos</a></li>
+                <li> <a href="simulacao.html">Simulação</a></li>
+             </ul>
+          </nav>
+    </header>
+
+    <main>
+        <h2>Exemplos do uso da Lei de Ohm em circuitos elétricos</h2>
+        <br>
+            <p>
+            <strong>Exemplo 1:</strong> Você conecta um LED de 100Ω a uma pilha de 9V. Qual será a corrente elétrica?
+            </p>
+
+                    <img src="css/ilust1.png" class="ilustra1">
+                    <p><strong>Aplicando a Lei de Ohm:</strong></p>
+                    
+                    <p> Ao conectar um LED de 100Ω a uma pilha de 9V, utilizamos a Lei de Ohm para calcular a corrente elétrica que passa pelo circuito. <br>
+                        A Lei de Ohm estabelece que a corrente 
+
+                        I é igual à tensão (<b>V</b>) dividida pela resistência (<b>R</b>):
+
+                        <p class="formula">I = 
+                            <span class="fraction">
+                                <span class="numerator">V</span>
+                                <span class="denominator">R</span>
+                            </span>
+                            = 
+                            <span class="fraction">
+                                <span class="numerator">9V</span>
+                                <span class="denominator">100Ω</span>
+                            </span>
+                            <!-- aqui é a resposta =0,09 -->
+                        </p>
+                         
+                        <h3>Qual é o resultado dessa expressão?</h3>
+                            
+                        <div class="option" onclick="verificar(this, true)">0,09A</div>
+                        <div class="option" onclick="verificar(this, false)">0,10A</div>
+                        <div class="option" onclick="verificar(this, false)">0,90A</div>
+                    </div>
+                    
+                    <script>
+                        let respondido = false;
+                    
+                        function verificar(elemento, correto) {
+                            if (respondido) return;
+                            respondido = true;
+                    
+                            if (correto) {
+                                elemento.classList.add('correct');
+                            } else {
+                                elemento.classList.add('incorrect');
+                            }
+                        }
+                    </script>
+    
+
+                         <p><br> Isso significa que uma corrente de 0,09A (ou 90mA) percorre o LED. Como podemos ver na imagem, o circuito é <br> 
+                                 fechado pela pilha, permitindo que os elétrons se movam pelo resistor (neste caso, o LED), gerando luz. <br> 
+                                 A resistência do LED controla o fluxo de corrente, evitando que ele queime com a tensão aplicada.</br>
+                        </p>
+                            <br>
+                    </main>
+
+                    <main>
+            <p>
+               <strong>Exemplo 2:</strong> Um chuveiro elétrico tem uma resistência de 20Ω e é ligado a uma tensão de 220V. <br>
+               Qual é a corrente que passa por ele? 
+            </p>
+                
+            <img src="css/ilust2.png" class="ilustra1">
+            <p><strong>Aplicando a Lei de Ohm:</strong></p>
+
+            <p> No caso do chuveiro elétrico, a resistência do chuveiro é de 20Ω, e ele está ligado a uma tensão de 220V. Aplicando a Lei de Ohm: 
+
+                    
+                    <p class="formula">I = 
+                        <span class="fraction">
+                            <span class="numerator">V</span>
+                            <span class="denominator">R</span>
+                        </span>
+                        = 
+                        <span class="fraction">
+                            <span class="numerator">220V</span>
+                            <span class="denominator">20Ω</span>
+                        </span>
+                        
+                    </p>
+
+                    <h3>Qual é o resultado dessa expressão?</h3>
+                            
+                    <div class="option" onclick="verificar(this, false)">10A</div>
+                    <div class="option" onclick="verificar(this, false)">15A</div>
+                    <div class="option" onclick="verificar(this, true)">11A</div>
+                </div>
+                
+                <script>
+                    let respondido = false;
+                
+                    function verificar(elemento, correto) {
+                        if (respondido) return;
+                        respondido = true;
+                
+                        if (correto) {
+                            elemento.classList.add('correct');
+                        } else {
+                            elemento.classList.add('incorrect');
+                        }
+                    }
+                </script>
+
+                    <p><br>Isso significa que uma corrente de 11A passa pelo chuveiro. Como podemos ver, a passagem dessa corrente pela resistência do chuveiro faz com que ele aqueça a água. <br>
+                        A resistência transforma a energia elétrica em energia térmica (efeito Joule), proporcionando o aquecimento necessário para o funcionamento do chuveiro.</br></p></p>
+                    <br>
+                </main>
+
+                <main>
+                    <p><b>Exemplo 3:</b> Um carregador de celular fornece 5V e a resistência interna do circuito do celular é de 2,5Ω. <br>
+                        Qual a corrente que ele recebe?</p>
+                        
+                        <img src="css/ilust3.png" class="ilustra1">
+                        <p><b>Aplicando a Lei de Ohm:</b></p>
+                        
+                        <p>Um carregador de celular fornece 5V, e a resistência interna do circuito do celular é de 2,5Ω. <br>
+                             Utilizamos a Lei de Ohm para calcular a corrente elétrica que passa pelo circuito.</p>
+
+                        <p class="formula">I = 
+                            <span class="fraction">
+                                <span class="numerator">V</span>
+                                <span class="denominator">R</span>
+                            </span>
+                            = 
+                            <span class="fraction">
+                                <span class="numerator">5V</span>
+                                <span class="denominator">2,5Ω</span>
+                            </span>
+                          
+                        </p>
+                        
+                            <h2>Qual é o resultado dessa expressão?</h2>
+                            
+                            <div class="option" onclick="verificar(this, false)">10A</div>
+                            <div class="option" onclick="verificar(this, true)">2A</div>
+                            <div class="option" onclick="verificar(this, false)">4A</div>
+                        </div>
+                        
+                        <script>
+                            let respondido = false;
+                        
+                            function verificar(elemento, correto) {
+                                if (respondido) return;
+                                respondido = true;
+                        
+                                if (correto) {
+                                    elemento.classList.add('correct');
+                                } else {
+                                    elemento.classList.add('incorrect');
+                                }
+                            }
+                        </script>
+
+                        <p>
+                            Isso significa que uma corrente de 2A percorre o circuito do celular. Como podemos ver, o carregador fornece energia elétrica ao dispositivo, e a resistência interna do celular regula o fluxo dessa corrente. Essa corrente permite que a bateria seja carregada de forma controlada, garantindo que o dispositivo funcione corretamente sem superaquecimento ou danos.
+                        </p>
+                        <br>
+
+                        
+                </main>
+            
+    <footer>
+        <p>© 2025 Lei de Ohm | Guilherme Bifon | Matheus Munhoz</p>
+    </footer>
+
+</body>
+</html>

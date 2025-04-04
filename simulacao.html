@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Lei de Ohm</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="formula.html">Fórmula</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="simulacao.html">Simulação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Simulação Lei de Ohm</h2>
+        <p>Ajuste os valores manualmente!</p>
+    <div class="vermei">
+        <p><strong>Não é uma calculadora</strong></p><br> 
+    </div>
+        
+        <label>Tensão <strong>(V)</strong>:</label>
+        <input type="text" id="voltage" value="10"> V   
+        <br><br>
+        
+        <label>Corrente <strong>(I)</strong>:</label>
+        <input type="text" id="current" value="2"> A
+        <br><br>
+        
+        <label>Resistência <strong>(R)</strong>:</label>
+        <input type="text" id="resistance" value="5"> Ω
+        <br><br>
+        
+        <button onclick="updateValues()">Atualizar</button>
+        
+        <div id="result" style="margin-top: 20px; font-size: 18px;"></div>
+    
+        <script>
+            function updateValues() {
+                var v = document.getElementById("voltage").value;
+                var i = document.getElementById("current").value;
+                var r = document.getElementById("resistance").value;
+                
+                // Atualiza a div 'result' com os valores inseridos
+                document.getElementById("result").innerHTML = `
+                    <strong>Novos valores:</strong><br>
+                    Tensão: ${v}V<br>
+                    Corrente: ${i}A<br>
+                    Resistência: ${r}Ω<br>
+                `;
+            }
+        </script>
+    </main> 
+
+</body>
+</html>
