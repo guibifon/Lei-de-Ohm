@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;   
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+header {
+    background-color: #0081cc;
+    color: white;
+    padding: 20px;
+
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #000
+}
+
+h2 {
+    color: #0081cc;
+}
+
+main ul{    
+    margin-left: 0;
+    padding-left: 0;    
+}
+
+main ul li{
+    list-style-position: inside;
+    padding-left: 0px;
+    margin-left: 0;
+    
+}
+
+main ol li{
+    list-style-type: none;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;                              /* Deixa as bordas mais suaves */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ilustra1{
+    align-items: center;
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formula {
+        background-color: #dfddda;
+        font-size: 1.2em;
+        padding: 10px;
+        border-left: 5px solid #0081cc;
+        width: 250px;                                 /* Escolhe a largura */
+        margin: 20px auto;                          /* Centraliza a caixa */
+}
+
+.imagem-circuito {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.comousar a{
+    color: #0081cc;
+    text-decoration: none;
+}
+
+.comousar a:hover {
+    color: #000;
+}
+
+
+footer {
+    background-color: #0081cc;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #0081cc;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+input {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.ilustra2{
+    align-items: center;
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vermei p{
+    color: #ff1100;
+}
