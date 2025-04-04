@@ -24,14 +24,6 @@
             border-bottom: 2px solid black;
         }
 
-        .quiz-box {
-            background: #fff;
-            padding: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
 
         .quiz-box h2 {
             margin-bottom: 20px;
@@ -39,7 +31,6 @@
         }
 
         .option {
-            align-items: center;
             background-color: #e9e9e9;
             padding: 15px;
             margin: 10px auto;
@@ -47,7 +38,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             border: 2px solid transparent;
-            width: 25%;
+            width: 50%;
         }
 
         .option:hover {
@@ -65,6 +56,7 @@
             border-color: #dc3545;
             color: #721c24;
         }
+    </style>
 
       </style>
 </head>
@@ -109,28 +101,12 @@
                             <!-- aqui é a resposta =0,09 -->
                         </p>
                          
-                        <h3>Qual é o resultado dessa expressão?</h3>
-                            
-                        <div class="option" onclick="verificar(this, true)">0,09A</div>
-                        <div class="option" onclick="verificar(this, false)">0,10A</div>
-                        <div class="option" onclick="verificar(this, false)">0,90A</div>
-                    </div>
-                    
-                    <script>
-                        let respondido = false;
-                    
-                        function verificar(elemento, correto) {
-                            if (respondido) return;
-                            respondido = true;
-                    
-                            if (correto) {
-                                elemento.classList.add('correct');
-                            } else {
-                                elemento.classList.add('incorrect');
-                            }
-                        }
-                    </script>
-    
+                        <div class="quiz-box" id="quiz3">
+                            <h3>Qual é o resultado dessa expressão?</h3>
+                            <div class="option" onclick="verificar('quiz3', this, true)">0,09A</div>
+                            <div class="option" onclick="verificar('quiz3', this, false)">0,10A</div>
+                            <div class="option" onclick="verificar('quiz3', this, false)">0,90A</div>
+                        </div>
 
                          <p><br> Isso significa que uma corrente de 0,09A (ou 90mA) percorre o LED. Como podemos ver na imagem, o circuito é <br> 
                                  fechado pela pilha, permitindo que os elétrons se movam pelo resistor (neste caso, o LED), gerando luz. <br> 
@@ -164,27 +140,12 @@
                         
                     </p>
 
-                    <h3>Qual é o resultado dessa expressão?</h3>
-                            
-                    <div class="option" onclick="verificar(this, false)">10A</div>
-                    <div class="option" onclick="verificar(this, false)">15A</div>
-                    <div class="option" onclick="verificar(this, true)">11A</div>
-                </div>
-                
-                <script>
-                    let respondido = false;
-                
-                    function verificar(elemento, correto) {
-                        if (respondido) return;
-                        respondido = true;
-                
-                        if (correto) {
-                            elemento.classList.add('correct');
-                        } else {
-                            elemento.classList.add('incorrect');
-                        }
-                    }
-                </script>
+                    <div class="quiz-box" id="quiz2">
+                        <h3>Qual é o resultado dessa expressão?</h3>
+                        <div class="option" onclick="verificar('quiz2', this, false)">10A</div>
+                        <div class="option" onclick="verificar('quiz2', this, false)">15A</div>
+                        <div class="option" onclick="verificar('quiz2', this, true)">11A</div>
+                    </div>
 
                     <p><br>Isso significa que uma corrente de 11A passa pelo chuveiro. Como podemos ver, a passagem dessa corrente pela resistência do chuveiro faz com que ele aqueça a água. <br>
                         A resistência transforma a energia elétrica em energia térmica (efeito Joule), proporcionando o aquecimento necessário para o funcionamento do chuveiro.</br></p></p>
@@ -214,36 +175,44 @@
                           
                         </p>
                         
+                        <div class="quiz-box" id="quiz1">
                             <h2>Qual é o resultado dessa expressão?</h2>
-                            
-                            <div class="option" onclick="verificar(this, false)">10A</div>
-                            <div class="option" onclick="verificar(this, true)">2A</div>
-                            <div class="option" onclick="verificar(this, false)">4A</div>
+                            <div class="option" onclick="verificar('quiz1', this, false)">10A</div>
+                            <div class="option" onclick="verificar('quiz1', this, true)">2A</div>
+                            <div class="option" onclick="verificar('quiz1', this, false)">4A</div>
                         </div>
-                        
-                        <script>
-                            let respondido = false;
-                        
-                            function verificar(elemento, correto) {
-                                if (respondido) return;
-                                respondido = true;
-                        
-                                if (correto) {
-                                    elemento.classList.add('correct');
-                                } else {
-                                    elemento.classList.add('incorrect');
-                                }
-                            }
-                        </script>
-
+                    
                         <p>
                             Isso significa que uma corrente de 2A percorre o circuito do celular. Como podemos ver, o carregador fornece energia elétrica ao dispositivo, e a resistência interna do celular regula o fluxo dessa corrente. Essa corrente permite que a bateria seja carregada de forma controlada, garantindo que o dispositivo funcione corretamente sem superaquecimento ou danos.
                         </p>
                         <br>
-
                         
                 </main>
             
+                <script>
+                    // Objeto para rastrear quais quizzes já foram respondidos
+                    let respondidos = {};
+            
+                    function verificar(quizId, elemento, correto) {
+                        // Se o quiz já foi respondido, não faz nada
+                        if (respondidos[quizId]) return;
+                        
+                        // Define que o quiz foi respondido
+                        respondidos[quizId] = true;
+            
+                        // Aplica a classe correta ou incorreta ao elemento clicado
+                        if (correto) {
+                            elemento.classList.add('correct');
+                        } else {
+                            elemento.classList.add('incorrect');
+                        }
+            
+                        // Pega todas as opções do quiz e desativa o clique nelas
+                        let opcoes = document.querySelectorAll(`#${quizId} .option`);
+                        opcoes.forEach(op => op.style.pointerEvents = "none");
+                    }
+                </script>
+
     <footer>
         <p>© 2025 Lei de Ohm | Guilherme Bifon | Matheus Munhoz</p>
     </footer>
